@@ -3,7 +3,6 @@ import { useStateValue } from "../Providers/StateProvider"
 import "./Checkout.css"
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import Subtotal from '../Subtotal/Subtotal';
-import CurrencyFormat from "react-currency-format"
 
 function Checkout() {
     const [{ basket, user }] = useStateValue();
@@ -29,6 +28,8 @@ function Checkout() {
                                 {
                                     basket?.map(item => (
                                         <CheckoutProduct
+                                            key={item.id}
+
                                             id={item.id}
                                             title={item.title}
                                             image={item.image}
